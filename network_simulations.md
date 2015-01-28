@@ -12,7 +12,7 @@ to console, looks like this:
 Visually, it is not appealing but this matrix allows for fast access when requesting a euclidean distance between any two points. 
 
 Next, I simulated edges by taking draws from a bernoulli distribution with probability: e^(euc_dist * a)/[1 + e^(euc_dist
- * a)]. The constant a is an arbitrary constant which controlls the overall expected tie frequency. Values of 1 contributed an edge between two given points and values of 0 signified no edge.
+ x a)]. The constant a is an arbitrary constant which controlls the overall expected tie frequency. Values of 1 contributed an edge between two given points and values of 0 signified no edge.
 
 Plotting the edges in the graph resulted in a graph like the one below:
 
