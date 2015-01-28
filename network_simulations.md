@@ -4,13 +4,15 @@ Using Python, I followed instructions to simulate a social network and simulate 
 
 My first task was to simulate the social nework. Setting an x and a y using two values taken from a normal distribution with an arbitrary mean and standard deviation, I plotted various points in a two dimensional graph to represent individuals in a network. 
 
-I then proceeded to create a list of lists to represent a matrix which consisted of euclidean distances between any two points contained in the graph. When printed to console, looks like this:
+I then proceeded to create a list of lists to represent a matrix which consisted of euclidean distances between any two points contained in the graph. When printed
+to console, looks like this:
 ```sh
 [['0.0', '0.465990674635', '0.357202949064', '0.0133321569109', '0.388099356896'], ['0.465990674635', '0.0', '0.660109732204', '0.478682555747', '0.839541846968'], ['0.357202949064', '0.660109732204', '0.0', '0.357965940372', '0.332919926034'], ['0.0133321569109', '0.478682555747', '0.357965940372', '0.0', '0.377884098192'], ['0.388099356896', '0.839541846968', '0.332919926034', '0.377884098192', '0.0']]
 ```
 Visually, it is not appealing but this matrix allows for fast access when requesting a euclidean distance between any two points. 
 
-Next, I simulated edges by taking draws from a bernoulli distribution with probability: e^(euc_dist * a)/[1 + e^(euc_dist * a)]. The constant a is an arbitrary constant which controlls the overall expected tie frequency. Values of 1 contributed an edge between two given points and values of 0 signified no edge.
+Next, I simulated edges by taking draws from a bernoulli distribution with probability: e^(euc_dist * a)/[1 + e^(euc_dist
+ * a)]. The constant a is an arbitrary constant which controlls the overall expected tie frequency. Values of 1 contributed an edge between two given points and values of 0 signified no edge.
 
 Plotting the edges in the graph resulted in a graph like the one below:
 
@@ -22,11 +24,17 @@ My next task was to simulate covariates like age and gender for each individual 
 age = int(np.random.uniform(1, 91))
 gender = np.random.binomial(1, 0.5, 1)
 ```
-With the age and gender, I generated an outcome by taking a draw from a standard normal with a mean equal to beta0 * beta1 * gender + beta2 * age. Combining all the information, I represented each individual with the tuple data struture in Python. An example is shown below in the form: (x cordinate, y cordinate, age, gender(0 or 1), outcome)
+With the age and gender, I generated an outcome by taking a draw from a standard normal with a mean equal to beta0 + (beta1 x gender) + (beta2 x age). Combining all the information, I represented each individual with the tuple data struture in Python. An example is shown below in the form: (x cordinate, y cordinate, age, gender(0 or 1), outcome)
 
 ```sh
 (0.04060265052702533, -0.3298469515571403, 12, 0, 11.29663869720959)
 ```
+
+I am still working on the last step where I have to take a confidence interval of a sample in the population and run a regression model to check how close the values of beta1 and beta2 are.
+
+
+
+During the course of the first two steps, I familiarized myself with two important statistical modules in Python. I also freshened up on normal and binomial distributions and found functions to implement them in code. Lastly, I taught myslef how to use GitHub and Markdown and properly upload files to a GitHub repository. I have included the python script. 
 
 
 
