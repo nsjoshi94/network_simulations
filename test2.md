@@ -14,7 +14,7 @@ Next, I simulated edges by taking draws from a bernoulli distribution with proba
 
 Plotting the edges in the graph resulted in a graph like the one below(50 individuals):
 
-![Alt text](/graph.png)
+![Alt text](C:\Users\Lenovo\Documents\GitHub\network_simulations)
 
 
 
